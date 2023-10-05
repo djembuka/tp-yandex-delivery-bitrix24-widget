@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Настройки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../select-plugin/twpx-select.css" />
+  </head>
+  <body>
+    <div class="twpx-ydw-settings">
+      <div class="twpx-ydw-settings-logo-block">
+        <img
+          src="images/logo.svg"
+          class="twpx-ydw-settings-logo"
+          width="250"
+          alt=""
+        />
+      </div>
+
+      <div class="twpx-ydw-settings-menu">
+        <span
+          class="twpx-ydw-settings-menu-item twpx-ydw-settings-menu-item--active"
+          data-tab="settings"
+          >Настройки подключения</span
+        >
+        <span class="twpx-ydw-settings-menu-item" data-tab="properties"
+          >Соответствия свойств</span
+        >
+        <span class="twpx-ydw-settings-menu-item" data-tab="defaults"
+          >Значения по умолчанию</span
+        >
+        <span class="twpx-ydw-settings-menu-item" data-tab="deals"
+          >Изменение стадий сделок</span
+        >
+      </div>
+
+      <div class="twpx-ydw-settings-form">
+        <form action="" method="" data-autosave="response.json">
+          <div class="twpx-ydw-settings-tab" data-tab="settings">
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">Токен</div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Для того, чтобы приложение работало, вам необходимо: перейти в
+                  личный кабинет Яндекс Доставки, Скопировать код ключа…
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div class="twpx-ydw-settings-form-control">
+                      <div class="twpx-ydw-settings-label">
+                        Токен Яндекс Доставка
+                      </div>
+                      <input
+                        type="text"
+                        name=""
+                        value=""
+                        id="twinpxYadeliverySettingsTokenInput"
+                        class="twpx-ydw-settings-input"
+                      />
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-control-note">
+                    <b>Совет</b>
+                    <p>Внесите все данные блока и потом проверьте.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">Склад</div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Для того, чтобы приложение работало, вам необходимо: перейти в
+                  личный кабинет Яндекс Доставки, Скопировать код ключа…
+                </div>
+                <div
+                  id="twinpxYadeliveryStorageID"
+                  class="twpx-ydw-settings-form-group twpx-ydw-settings-form-group--multiple"
+                >
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div class="twpx-ydw-settings-form-control">
+                      <div class="twpx-ydw-settings-btn-remove">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect
+                            x="0.01"
+                            y="-0.01"
+                            width="32"
+                            height="32"
+                            rx="10"
+                            fill="#e03e41"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M20.86,10.45H18.32V10A1.38,1.38,0,0,0,16.94,8.6H15.09A1.38,1.38,0,0,0,13.71,10v.46H11.17A1.15,1.15,0,0,0,10,11.6v.92a.47.47,0,0,0,.47.47H21.55a.46.46,0,0,0,.46-.47V11.6A1.14,1.14,0,0,0,20.86,10.45ZM14.63,10a.47.47,0,0,1,.46-.47h1.85a.47.47,0,0,1,.46.47v.46H14.63Z"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M10.89,13.91a.14.14,0,0,0-.14.15l.38,8a1.38,1.38,0,0,0,1.38,1.32h7a1.38,1.38,0,0,0,1.38-1.32l.38-8a.14.14,0,0,0-.14-.15Zm7,1.15a.47.47,0,0,1,.46-.46.46.46,0,0,1,.46.46v6a.45.45,0,0,1-.46.46.46.46,0,0,1-.46-.46Zm-2.31,0a.47.47,0,0,1,.93,0v6a.47.47,0,0,1-.93,0Zm-2.3,0a.46.46,0,0,1,.46-.46.47.47,0,0,1,.46.46v6a.46.46,0,0,1-.46.46.45.45,0,0,1-.46-.46Z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-label">ID склада</div>
+                      <input
+                        type="text"
+                        name="STORAGE[]"
+                        value="Первый склад"
+                        class="twpx-ydw-settings-input"
+                      />
+                    </div>
+                    <div class="twpx-ydw-settings-form-control">
+                      <div class="twpx-ydw-settings-btn-remove">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect
+                            x="0.01"
+                            y="-0.01"
+                            width="32"
+                            height="32"
+                            rx="10"
+                            fill="#e03e41"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M20.86,10.45H18.32V10A1.38,1.38,0,0,0,16.94,8.6H15.09A1.38,1.38,0,0,0,13.71,10v.46H11.17A1.15,1.15,0,0,0,10,11.6v.92a.47.47,0,0,0,.47.47H21.55a.46.46,0,0,0,.46-.47V11.6A1.14,1.14,0,0,0,20.86,10.45ZM14.63,10a.47.47,0,0,1,.46-.47h1.85a.47.47,0,0,1,.46.47v.46H14.63Z"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M10.89,13.91a.14.14,0,0,0-.14.15l.38,8a1.38,1.38,0,0,0,1.38,1.32h7a1.38,1.38,0,0,0,1.38-1.32l.38-8a.14.14,0,0,0-.14-.15Zm7,1.15a.47.47,0,0,1,.46-.46.46.46,0,0,1,.46.46v6a.45.45,0,0,1-.46.46.46.46,0,0,1-.46-.46Zm-2.31,0a.47.47,0,0,1,.93,0v6a.47.47,0,0,1-.93,0Zm-2.3,0a.46.46,0,0,1,.46-.46.47.47,0,0,1,.46.46v6a.46.46,0,0,1-.46.46.45.45,0,0,1-.46-.46Z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-label">ID склада</div>
+                      <input
+                        type="text"
+                        name="STORAGE[]"
+                        value="Второй склад"
+                        class="twpx-ydw-settings-input"
+                      />
+                    </div>
+                    <div class="twpx-ydw-settings-form-control">
+                      <div class="twpx-ydw-settings-btn-remove">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect
+                            x="0.01"
+                            y="-0.01"
+                            width="32"
+                            height="32"
+                            rx="10"
+                            fill="#e03e41"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M20.86,10.45H18.32V10A1.38,1.38,0,0,0,16.94,8.6H15.09A1.38,1.38,0,0,0,13.71,10v.46H11.17A1.15,1.15,0,0,0,10,11.6v.92a.47.47,0,0,0,.47.47H21.55a.46.46,0,0,0,.46-.47V11.6A1.14,1.14,0,0,0,20.86,10.45ZM14.63,10a.47.47,0,0,1,.46-.47h1.85a.47.47,0,0,1,.46.47v.46H14.63Z"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M10.89,13.91a.14.14,0,0,0-.14.15l.38,8a1.38,1.38,0,0,0,1.38,1.32h7a1.38,1.38,0,0,0,1.38-1.32l.38-8a.14.14,0,0,0-.14-.15Zm7,1.15a.47.47,0,0,1,.46-.46.46.46,0,0,1,.46.46v6a.45.45,0,0,1-.46.46.46.46,0,0,1-.46-.46Zm-2.31,0a.47.47,0,0,1,.93,0v6a.47.47,0,0,1-.93,0Zm-2.3,0a.46.46,0,0,1,.46-.46.47.47,0,0,1,.46.46v6a.46.46,0,0,1-.46.46.45.45,0,0,1-.46-.46Z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-label">ID склада</div>
+                      <input
+                        type="text"
+                        name="STORAGE[]"
+                        value="Третий склад"
+                        class="twpx-ydw-settings-input"
+                      />
+                    </div>
+                    <div class="twpx-ydw-settings-add-button">
+                      Добавить склад
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="twpx-ydw-settings-form-block"
+              id="twpxYdwTerminalFormBlock"
+            >
+              <div class="twpx-ydw-settings-form-block-title">
+                Пункты самопривоза
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Выберите пункты самопривоза, которые вы используете для
+                  отправки товаров. Если вы используете только свои склады для
+                  отправки товара, то указывать пункты самопривоза не нужно.
+                </div>
+                <div
+                  class="twpx-ydw-settings-form-group twpx-ydw-settings-form-group--multiple"
+                >
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--active"
+                    >
+                      <div class="twpx-ydw-settings-btn-list">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect width="32" height="32" rx="7" fill="#434343" />
+                          <g>
+                            <line
+                              x2="14"
+                              transform="translate(9 11)"
+                              fill="none"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-width="2"
+                            />
+                            <line
+                              x2="14"
+                              transform="translate(9 16)"
+                              fill="none"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-width="2"
+                            />
+                            <line
+                              x2="14"
+                              transform="translate(9 21)"
+                              fill="none"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-width="2"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-btn-remove">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect
+                            x="0.01"
+                            y="-0.01"
+                            width="32"
+                            height="32"
+                            rx="10"
+                            fill="#e03e41"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M20.86,10.45H18.32V10A1.38,1.38,0,0,0,16.94,8.6H15.09A1.38,1.38,0,0,0,13.71,10v.46H11.17A1.15,1.15,0,0,0,10,11.6v.92a.47.47,0,0,0,.47.47H21.55a.46.46,0,0,0,.46-.47V11.6A1.14,1.14,0,0,0,20.86,10.45ZM14.63,10a.47.47,0,0,1,.46-.47h1.85a.47.47,0,0,1,.46.47v.46H14.63Z"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M10.89,13.91a.14.14,0,0,0-.14.15l.38,8a1.38,1.38,0,0,0,1.38,1.32h7a1.38,1.38,0,0,0,1.38-1.32l.38-8a.14.14,0,0,0-.14-.15Zm7,1.15a.47.47,0,0,1,.46-.46.46.46,0,0,1,.46.46v6a.45.45,0,0,1-.46.46.46.46,0,0,1-.46-.46Zm-2.31,0a.47.47,0,0,1,.93,0v6a.47.47,0,0,1-.93,0Zm-2.3,0a.46.46,0,0,1,.46-.46.47.47,0,0,1,.46.46v6a.46.46,0,0,1-.46.46.45.45,0,0,1-.46-.46Z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-btn-clear"></div>
+                      <div class="twpx-ydw-settings-label">
+                        ID пункта самопривоза
+                      </div>
+                      <input type="text" class="twpx-ydw-settings-input" value="Пункт на улице Лодочная" disabled="disabled">
+                      <input
+                        type="hidden"
+                        name="PSP_ID[]"
+                        value='{"id":"07352120-707c-462a-9c83-7048daabb1c8","title":"Пункт выдачи заказов Яндекс Маркета","coords":"58.034428,38.847079","location":"Рыбинск"}'
+                      />
+                    </div>
+                    <div class="twpx-ydw-settings-form-control">
+                      <div class="twpx-ydw-settings-btn-list">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect width="32" height="32" rx="7" fill="#434343" />
+                          <g>
+                            <line
+                              x2="14"
+                              transform="translate(9 11)"
+                              fill="none"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-width="2"
+                            />
+                            <line
+                              x2="14"
+                              transform="translate(9 16)"
+                              fill="none"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-width="2"
+                            />
+                            <line
+                              x2="14"
+                              transform="translate(9 21)"
+                              fill="none"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-width="2"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-btn-remove">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                        >
+                          <rect
+                            x="0.01"
+                            y="-0.01"
+                            width="32"
+                            height="32"
+                            rx="10"
+                            fill="#e03e41"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M20.86,10.45H18.32V10A1.38,1.38,0,0,0,16.94,8.6H15.09A1.38,1.38,0,0,0,13.71,10v.46H11.17A1.15,1.15,0,0,0,10,11.6v.92a.47.47,0,0,0,.47.47H21.55a.46.46,0,0,0,.46-.47V11.6A1.14,1.14,0,0,0,20.86,10.45ZM14.63,10a.47.47,0,0,1,.46-.47h1.85a.47.47,0,0,1,.46.47v.46H14.63Z"
+                          />
+                          <path
+                            fill="#fff"
+                            d="M10.89,13.91a.14.14,0,0,0-.14.15l.38,8a1.38,1.38,0,0,0,1.38,1.32h7a1.38,1.38,0,0,0,1.38-1.32l.38-8a.14.14,0,0,0-.14-.15Zm7,1.15a.47.47,0,0,1,.46-.46.46.46,0,0,1,.46.46v6a.45.45,0,0,1-.46.46.46.46,0,0,1-.46-.46Zm-2.31,0a.47.47,0,0,1,.93,0v6a.47.47,0,0,1-.93,0Zm-2.3,0a.46.46,0,0,1,.46-.46.47.47,0,0,1,.46.46v6a.46.46,0,0,1-.46.46.45.45,0,0,1-.46-.46Z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="twpx-ydw-settings-label">
+                        ID пункта самопривоза
+                      </div>
+                      <input type="text" value="" class="twpx-ydw-settings-input" disabled="disabled"></input>
+                      <input type="hidden" name="PSP_ID[]" value="" />
+                    </div>
+                    <div class="twpx-ydw-settings-add-button">
+                      Добавить пункт самопривоза
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">Яндекс Карта</div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Для того, чтобы приложение работало, вам необходимо: перейти в
+                  личный кабинет <a href="">Яндекс Доставки</a>, Скопировать код
+                  ключа…
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div class="twpx-ydw-settings-form-control">
+                      <div class="twpx-ydw-settings-label">
+                        Ключ API Яндекс Карты
+                      </div>
+                      <input
+                        type="text"
+                        name="YMAPS_KEY"
+                        value="6934dd6e-0a33-4cde-bfcf-7d6c30eeddac"
+                        id="twinpxYadeliverySettingsApiKeyInput"
+                        class="twpx-ydw-settings-input"
+                      />
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-control-note">
+                    <b>Совет</b>
+                    <p>Внесите все данные блока и потом проверьте.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-saved-info">
+              Данные сохранены: 31.05.2023 13:54
+            </div>
+
+            <div class="twpx-ydw-settings-error">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0,0V5"
+                  transform="translate(12 9)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                />
+                <path
+                  data-name="Vector"
+                  d="M10,18.817H3.939c-3.47,0-4.92-2.48-3.24-5.51l3.12-5.62,2.94-5.28c1.78-3.21,4.7-3.21,6.48,0l2.94,5.29,3.12,5.62c1.68,3.03.22,5.51-3.24,5.51H10Z"
+                  transform="translate(2.001 2.592)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                />
+                <path
+                  data-name="Vector"
+                  d="M0,0H.009"
+                  transform="translate(11.995 17)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  data-name="Vector"
+                  d="M0,0H24V24H0Z"
+                  fill="none"
+                  opacity="0"
+                />
+              </svg>
+              <div class="twpx-ydw-settings-error-content">
+                Не найден номер заказа.<br />Ошибка в ключе Яндекс Карт<br />Не
+                найден пункт самопривоза.
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-success">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <g id="Icon" transform="translate(-748 -252)">
+                  <g>
+                    <path
+                      d="M7,20h6c5,0,7-2,7-7V7c0-5-2-7-7-7H7C2,0,0,2,0,7v6C0,18,2,20,7,20Z"
+                      transform="translate(750 254)"
+                      fill="none"
+                      stroke="#338d3e"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M0,2.83,2.83,5.66,8.5,0"
+                      transform="translate(755.75 261.17)"
+                      fill="none"
+                      stroke="#338d3e"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M0,0H24V24H0Z"
+                      transform="translate(748 252)"
+                      fill="none"
+                      opacity="0"
+                    />
+                  </g>
+                </g>
+              </svg>
+
+              <div class="twpx-ydw-settings-success-content">
+                Сообщение об успешной проверке.
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              id="twinpxYadeliverySettingsButton"
+              class="twpx-ydw-settings-button"
+              data-url="settings-button-response.json"
+            >
+              Проверить подключение
+            </button>
+          </div>
+
+          <div class="twpx-ydw-settings-tab" data-tab="properties">
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">Товары</div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Выберите свойство товара, которое отвечает за артикул товара.
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Артикул товара</div>
+                      <select
+                        name="VENDOR_CODE"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Вес</option>
+                        <option value="1">Артикул</option>
+                        <option value="2">Комментарии</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">
+                Статусы доставки
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Выберите свойство сделки, куда будет записываться статус
+                  доставки.
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Статус доставки</div>
+                      <select name="STATUS" class="twpx-ydw-settings-select">
+                        <option></option>
+                        <option value="0">Вес</option>
+                        <option value="1">Статус доставки</option>
+                        <option value="2">Комментарии</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">
+                Название складов
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Если у вас несколько складов, для удобства выбора склада
+                  присвойте им понятные названия.
+                </div>
+                <div id="twinpxYadeliveryStorageName">
+                  <div class="twpx-ydw-settings-form-group">
+                    <div class="twpx-ydw-settings-form-wrapper">
+                      <div
+                        class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select twpx-ydw-settings-form-control--active"
+                      >
+                        <div class="twpx-ydw-settings-label">ID склада</div>
+                        <select
+                          name="STORAGE_ID[]"
+                          class="twpx-ydw-settings-select"
+                        >
+                          <option value="Первый склад">Первый склад</option>
+                          <option value="Второй склад">Второй склад</option>
+                          <option value="Третий склад">Третий склад</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="twpx-ydw-settings-form-wrapper">
+                      <div class="twpx-ydw-settings-form-control">
+                        <div class="twpx-ydw-settings-label">
+                          Название склада
+                        </div>
+                        <input
+                          type="text"
+                          name="STORAGE_NAME[]"
+                          value="Название склада 1"
+                          class="twpx-ydw-settings-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-group">
+                    <div class="twpx-ydw-settings-form-wrapper">
+                      <div
+                        class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select twpx-ydw-settings-form-control--active"
+                      >
+                        <div class="twpx-ydw-settings-label">ID склада</div>
+                        <select
+                          name="STORAGE_ID[]"
+                          class="twpx-ydw-settings-select"
+                        >
+                          <option value="Первый склад">Первый склад</option>
+                          <option value="Второй склад">Второй склад</option>
+                          <option value="Третий склад">Третий склад</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="twpx-ydw-settings-form-wrapper">
+                      <div class="twpx-ydw-settings-form-control">
+                        <div class="twpx-ydw-settings-label">
+                          Название склада
+                        </div>
+                        <input
+                          type="text"
+                          name="STORAGE_NAME[]"
+                          value="Название склада 2"
+                          class="twpx-ydw-settings-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-group">
+                    <div class="twpx-ydw-settings-form-wrapper">
+                      <div
+                        class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select twpx-ydw-settings-form-control--active"
+                      >
+                        <div class="twpx-ydw-settings-label">ID склада</div>
+                        <select
+                          name="STORAGE_ID[]"
+                          class="twpx-ydw-settings-select"
+                        >
+                          <option value="Первый склад">Первый склад</option>
+                          <option value="Второй склад">Второй склад</option>
+                          <option value="Третий склад">Третий склад</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="twpx-ydw-settings-form-wrapper">
+                      <div class="twpx-ydw-settings-form-control">
+                        <div class="twpx-ydw-settings-label">
+                          Название склада
+                        </div>
+                        <input
+                          type="text"
+                          name="STORAGE_NAME[]"
+                          value=""
+                          class="twpx-ydw-settings-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-saved-info">
+              Данные сохранены: 31.05.2023 13:54
+            </div>
+          </div>
+
+          <div class="twpx-ydw-settings-tab" data-tab="defaults">
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">
+                НДС по умолчанию
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Выберите свойства товаров, которые будут использоваться для
+                  обработки данных Яндекс Доставкой.
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">НДС</div>
+                      <select name="VAT" class="twpx-ydw-settings-select">
+                        <option></option>
+                        <option value="0">Без НДС</option>
+                        <option value="1">0%</option>
+                        <option value="2">5%</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-control-note">
+                    <b>Совет</b>
+                    <p>Внесите все данные блока и потом проверьте.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-saved-info">
+              Данные сохранены: 31.05.2023 13:54
+            </div>
+          </div>
+
+          <div class="twpx-ydw-settings-tab" data-tab="deals">
+            <div class="twpx-ydw-settings-form-block">
+              <div class="twpx-ydw-settings-form-block-title">Сделки</div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Настройте автоматическое изменение стадий воронки на основание
+                  статусов доставки.
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Воронка</div>
+                      <select name="VAT" class="twpx-ydw-settings-select">
+                        <option></option>
+                        <option value="0">Офис продаж в Мневниках</option>
+                        <option value="1">Офис продаж в Мытищах</option>
+                        <option value="2">Склад</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  При статусе <b>Доставлено</b> переводить переводить сделку
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Из стадии</div>
+                      <select
+                        name="STAGE_FROM[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">В обработке</option>
+                        <option value="1">Закончить</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">В стадию</div>
+                      <select
+                        name="STAGE_TO[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Доставляется</option>
+                        <option value="1">Доставлен</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  При статусе <b>Отменено</b> переводить переводить сделку
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Из стадии</div>
+                      <select
+                        name="STAGE_FROM[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">В обработке</option>
+                        <option value="1">Закончить</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">В стадию</div>
+                      <select
+                        name="STAGE_TO[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Доставляется</option>
+                        <option value="1">Доставлен</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  При статусе <b>Возвращено</b> переводить переводить сделку
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Из стадии</div>
+                      <select
+                        name="STAGE_FROM[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">В обработке</option>
+                        <option value="1">Закончить</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">В стадию</div>
+                      <select
+                        name="STAGE_TO[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Доставляется</option>
+                        <option value="1">Доставлен</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-hr"></div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  Настройте автоматическое изменение стадий воронки на основание
+                  статусов доставки.
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Воронка</div>
+                      <select name="VAT" class="twpx-ydw-settings-select">
+                        <option></option>
+                        <option value="0">Офис продаж в Мневниках</option>
+                        <option value="1">Офис продаж в Мытищах</option>
+                        <option value="2">Склад</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  При статусе <b>Доставлено</b> переводить переводить сделку
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Из стадии</div>
+                      <select
+                        name="STAGE_FROM[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">В обработке</option>
+                        <option value="1">Закончить</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">В стадию</div>
+                      <select
+                        name="STAGE_TO[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Доставляется</option>
+                        <option value="1">Доставлен</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  При статусе <b>Отменено</b> переводить переводить сделку
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Из стадии</div>
+                      <select
+                        name="STAGE_FROM[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">В обработке</option>
+                        <option value="1">Закончить</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">В стадию</div>
+                      <select
+                        name="STAGE_TO[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Доставляется</option>
+                        <option value="1">Доставлен</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="twpx-ydw-settings-form-block-content">
+                <div class="twpx-ydw-settings-form-block-description">
+                  При статусе <b>Возвращено</b> переводить переводить сделку
+                </div>
+                <div class="twpx-ydw-settings-form-group">
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">Из стадии</div>
+                      <select
+                        name="STAGE_FROM[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">В обработке</option>
+                        <option value="1">Закончить</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="twpx-ydw-settings-form-wrapper">
+                    <div
+                      class="twpx-ydw-settings-form-control twpx-ydw-settings-form-control--select"
+                    >
+                      <div class="twpx-ydw-settings-label">В стадию</div>
+                      <select
+                        name="STAGE_TO[]"
+                        class="twpx-ydw-settings-select"
+                      >
+                        <option></option>
+                        <option value="0">Доставляется</option>
+                        <option value="1">Доставлен</option>
+                        <option value="2">Отменена</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="twpx-ydw-settings-saved-info">
+              Данные сохранены: 31.05.2023 13:54
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="twpx-ydw-settings-map">
+        <script>
+          window.twinpxYadeliveryErrors = {
+            emptyToken:
+              'Отсутствует токен API Яндекс Доставка в Настройках приложения. Пожалуйста, введите токен API Яндекс Доставка в Настройках приложения.',
+            invalidApiKey:
+              'Ключ API Яндекс Карты некорректный, неактивированный или заблокированный. Пожалуйста, проверьте, что в настройках приложения введён корректный ключ API Яндекс Карт. Если ключ корректный, обратитесь, пожалуйста, в поддержку Яндекс Карт.',
+            emptyApiKey:
+              'Отсутствует ключ API Яндекс Карты  в Настройках приложения. Пожалуйста, введите ключ API Яндекс Карты в Настройках приложения.',
+            emptyPoints:
+              'В выбранном регионе отсутствуют ПВЗ/ПСТ/ППЗ. Пожалуйста, выберите другой регион.',
+            severError:
+              'Внутренняя ошибка сервера при передаче ПВЗ/ПСТ/ППЗ. Пожалуйста, обратитесь в службу поддержки нашего приложения.',
+          };
+          window.twinpxYadeliveryFetchPointsURL =
+            '../widget/widget/points.json';
+          window.twinpxYadeliveryYmapsAPI = true;
+          window.twinpxYadeliveryFetchWidget = {
+            js: '../widget/widget/load.js',
+            css: '../widget/widget/load.css',
+          };
+        </script>
+
+        <script async src="../widget/widget/widget.js"></script>
+
+        <div id="yadelivery-widget"></div>
+      </div>
+
+      <div class="twpx-ydw-settings-location">
+        <script>
+          window.twinpxYadeliveryLocationLoad = '../location/widget/load.html';
+          window.twinpxYadeliveryLoacationWidget = {
+            js: '../location/widget/load.js',
+            css: '../location/widget/load.css',
+          };
+        </script>
+
+        <script async src="../location/widget/location-widget.js"></script>
+
+        <div id="location-widget"></div>
+      </div>
+    </div>
+    <script src="../select-plugin/twpx-select.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

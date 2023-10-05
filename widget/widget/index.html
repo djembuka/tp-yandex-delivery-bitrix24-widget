@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Виджет ПВЗ</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="//api-maps.yandex.ru/2.1.50/?apikey=6934dd6e-0a33-4cde-bfcf-7d6c30eeddac&load=package.full&lang=ru-RU"></script>
+
+    <script>
+      window.twinpxYadeliveryFetchPointsURL = 'points.json';
+      window.twinpxYadeliveryYmapsAPI = true;
+      window.twinpxYadeliveryFetchWidget = { js: 'load.js', css: 'load.css' };
+    </script>
+
+    <script async src="widget.js"></script>
+
+    <div id="yadelivery-widget"></div>
+
+    <script>
+      (function (w) {
+        function startWidget() {
+          w.twpxYadeliveryWidget.createWidget({
+            containerId: 'yadelivery-widget',
+            params: {
+              // Город отображаемый на карте при запуске
+              city: 'Россия, Рыбинск',
+              delivery_price: 'от 100', // Стоимость доставки
+              delivery_term: 'от 1 дня', // Срок доставки
+              show_select_button: true, // Отображение кнопки выбора ПВЗ (false - скрыть кнопку, true - показать кнопку)
+              filter: {
+                // Тип способа доставки
+                type: [
+                  'pickup_point', // Пункт выдачи заказа
+                  'terminal', // Постамат
+                ],
+                is_yandex_branded: false, // Тип пункта выдачи заказа (false - Партнерские ПВЗ, true - ПВЗ Яндекса)
+                // Способ оплаты
+                payment_methods: [
+                  'already_paid', // Доступен для доставки предоплаченных заказов
+                  'cash_on_receipt', // Доступна оплата наличными при получении
+                  'card_on_receipt', // Доступна оплата картой при получении
+                ],
+              },
+            },
+          });
+        }
+        w.twpxYadeliveryWidget
+          ? startWidget()
+          : document.addEventListener('twpxYadeliveryWidgetLoad', startWidget);
+      })(window);
+    </script>
+  </body>
+</html>

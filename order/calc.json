@@ -1,0 +1,7 @@
+{
+  "status": "success",
+  "data": {
+    "num": 1000
+  },
+  "errors": [{ "message": "Server error." }]
+}

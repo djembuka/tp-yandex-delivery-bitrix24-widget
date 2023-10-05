@@ -1,0 +1,7 @@
+{
+  "status": "success",
+  "data": {
+    "locationList": ["Москва", "Московская область", "Московский район"]
+  },
+  "errors": null
+}

@@ -1,0 +1,7 @@
+{
+  "status": "success",
+  "data": {
+    "date": "Данные сохранены: 31.05.2023 13:56"
+  },
+  "errors": [{ "message": "Server error." }]
+}
