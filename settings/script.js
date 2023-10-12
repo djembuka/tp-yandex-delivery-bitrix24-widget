@@ -355,7 +355,10 @@ window.addEventListener('DOMContentLoaded', () => {
           const activeInput = listButton
             .closest('.twpx-ydw-settings-form-wrapper')
             .querySelector('.twpx-ydw-settings-input[data-active="true"]');
-          activeInput.removeAttribute('data-active');
+
+          if (activeInput) {
+            activeInput.removeAttribute('data-active');
+          }
 
           const input = listButton
             .closest('.twpx-ydw-settings-form-control')
