@@ -268,6 +268,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
           if (control.id === 'twinpxYadeliverySettingsApiKeyInput') {
             appendYmapsScript(String(control.value).trim());
+            window.twinpxYadeliveryYmapsAPI = true;
           }
         } else {
           block.classList.remove('twpx-ydw-settings-form-control--active');
@@ -350,6 +351,12 @@ window.addEventListener('DOMContentLoaded', () => {
         listButton.addEventListener('click', (e) => {
           e.preventDefault();
 
+          //remove data-active
+          const activeInput = listButton
+            .closest('.twpx-ydw-settings-form-wrapper')
+            .querySelector('.twpx-ydw-settings-input[data-active="true"]');
+          activeInput.removeAttribute('data-active');
+
           const input = listButton
             .closest('.twpx-ydw-settings-form-control')
             .querySelector('.twpx-ydw-settings-input');
@@ -363,6 +370,7 @@ window.addEventListener('DOMContentLoaded', () => {
               ? JSON.parse(hiddenInput.value)
               : {};
 
+          //set data-active
           input.setAttribute('data-active', true);
 
           if (input.value.trim() !== '') {
@@ -662,17 +670,6 @@ window.addEventListener('DOMContentLoaded', () => {
           window.twinpxIframeContentSize.scrollWidth,
           window.twinpxIframeContentSize.scrollHeight
         );
-      }
-
-      const terminalFormBlock = document.getElementById(
-        'twpxYdwTerminalFormBlock'
-      );
-
-      if (terminalFormBlock) {
-        const activeInput = terminalFormBlock.querySelector(
-          '.twpx-ydw-settings-input[data-active="true"]'
-        );
-        activeInput.removeAttribute('data-active');
       }
 
       settingsBlock.classList.remove('twpx-ydw-settings--map');
