@@ -1433,16 +1433,18 @@ window.addEventListener('DOMContentLoaded', () => {
         });
       })();
 
-      //success
-      // (() => {
-      //   orderBlock
-      //     .querySelector('#twinpxYadeliveryMoreButton')
-      //     .addEventListener('click', (e) => {
-      //       e.preventDefault();
-      //       orderBlock.classList.remove('twpx-ydw-order--success');
-      //       resetOrderForm();
-      //     });
-      // })();
+      success(() => {
+        orderBlock
+          .querySelector('#twinpxYadeliveryMoreButton')
+          .addEventListener('click', (e) => {
+            e.preventDefault();
+            // orderBlock.classList.remove('twpx-ydw-order--success');
+            // resetOrderForm();
+            if (window.BX24) {
+              BX24.closeApplication();
+            }
+          });
+      })();
 
       //init location
       document.addEventListener('twpxYdwInitLocation', () => {
