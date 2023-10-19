@@ -169,10 +169,11 @@ window.twpxYadeliveryLocation.locationJS = (params) => {
             );
           }
         } else {
-          showError('Server error');
+          showError('Ошибка соединения');
         }
       }
     } catch (err) {
+      showError('Ошибка соединения');
       throw err;
     }
   }
