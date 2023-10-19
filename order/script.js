@@ -603,6 +603,12 @@ window.addEventListener('DOMContentLoaded', () => {
           }
         });
 
+        //this is not required, because we have document onclick
+        //just to be sure
+        control.addEventListener('keyup', () => {
+          hideError();
+        });
+
         //boxes custom
         if (
           control.closest('.twpx-ydw-order-form-block') &&
@@ -1019,11 +1025,8 @@ window.addEventListener('DOMContentLoaded', () => {
           setInputValue(input, `${barcode}_${boxesIndex}`);
           //name attribute
           boxContainer.querySelectorAll('[name]').forEach((control) => {
-            let value;
             let name = control.getAttribute('name');
-            console.log(name);
-            value = name.replace(/\d/g, boxesIndex);
-            control.setAttribute('name', value);
+            control.setAttribute('name', name.replace(/\d/g, boxesIndex));
           });
         }
 
@@ -1763,6 +1766,10 @@ window.addEventListener('DOMContentLoaded', () => {
         errorBlock.classList.add('twpx-ydw-order-error--show');
         orderForm.insertBefore(errorBlock, block);
         fitWindow();
+      }
+
+      function hideError() {
+        errorBlock.classList.remove('twpx-ydw-order-error--show');
       }
 
       function resetOrderForm() {
