@@ -1425,6 +1425,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (window.BX24) {
                   BX24.fitWindow();
                 }
+                document.querySelector('#twinpxOrderNumber').innerText =
+                  result.data;
               } else if (result.errors) {
                 showError(result.errors[0].message, orderButtonBlock);
                 validateForm();
