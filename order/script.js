@@ -1017,6 +1017,14 @@ window.addEventListener('DOMContentLoaded', () => {
             '.twpx-ydw-order-form-control--barcode .twpx-ydw-order-input'
           );
           setInputValue(input, `${barcode}_${boxesIndex}`);
+          //name attribute
+          boxContainer.querySelectorAll('[name]').forEach((control) => {
+            let value;
+            let name = control.getAttribute('name');
+            console.log(name);
+            value = name.replace(/\d/g, boxesIndex);
+            control.setAttribute('name', value);
+          });
         }
 
         function createProductsSelect(indexToRemove, currentIndex) {
@@ -1433,17 +1441,22 @@ window.addEventListener('DOMContentLoaded', () => {
         });
       })();
 
-      success(() => {
-        orderBlock
-          .querySelector('#twinpxYadeliveryMoreButton')
-          .addEventListener('click', (e) => {
-            e.preventDefault();
-            // orderBlock.classList.remove('twpx-ydw-order--success');
-            // resetOrderForm();
-            if (window.BX24) {
-              BX24.closeApplication();
-            }
-          });
+      (() => {
+        const moreButton = orderBlock.querySelector(
+          '#twinpxYadeliveryMoreButton'
+        );
+        if (moreButton) {
+          orderBlock
+            .querySelector('#twinpxYadeliveryMoreButton')
+            .addEventListener('click', (e) => {
+              e.preventDefault();
+              // orderBlock.classList.remove('twpx-ydw-order--success');
+              // resetOrderForm();
+              if (window.BX24) {
+                BX24.closeApplication();
+              }
+            });
+        }
       })();
 
       //init location
@@ -1607,7 +1620,9 @@ window.addEventListener('DOMContentLoaded', () => {
           'twpx-ydw-order-form-control--full'
         );
 
-        activeInput.blur();
+        activeInput
+          .closest('.twpx-ydw-order-form-control')
+          .classList.remove('twpx-ydw-order-form-control--invalid');
 
         //close map
         document.dispatchEvent(new CustomEvent('twpxYdwCloseMap'));
