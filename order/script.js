@@ -1,4 +1,22 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const options = {
+      threshold: 0,
+    },
+    observer = new IntersectionObserver(callback, options),
+    target = document.querySelector('.twpx-ydw-order-error');
+
+  if (target) {
+    observer.observe(target);
+  }
+
+  function callback(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log(entry);
+      }
+    });
+  }
+
   document.querySelectorAll('.twpx-ydw-order').forEach((orderBlock) => {
     const orderForm = orderBlock.querySelector('#twinpxYadeliveryOrderForm');
     const boxesBlock = orderBlock.querySelector('#twinpxYadeliveryBoxes');
@@ -34,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (window.BX24) {
       BX24.callMethod('entity.get', {}, (result) => {
         if (result.error()) {
-          console.error(result.error());
+          // console.error(result.error());
           onBX24Methods();
         } else {
           let storageEntitiesArray = result.data();
@@ -48,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
               },
               (res) => {
                 if (res.error()) {
-                  console.error(res.error());
+                  // console.error(res.error());
                   onBX24Methods();
                 } else {
                   addEntityItems(Object.keys(storage), onBX24Methods);
@@ -63,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
               },
               (res) => {
                 if (res.error()) {
-                  console.error(res.error());
+                  // console.error(res.error());
                   onBX24Methods();
                 } else {
                   const storageItemsArray = res.data();
@@ -108,7 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
           },
           (r) => {
             if (r.error()) {
-              console.error(r.error());
+              // console.error(r.error());
               if (i === codesArray.length - 1) {
                 callback();
               }
@@ -482,6 +500,10 @@ window.addEventListener('DOMContentLoaded', () => {
           switcher.addEventListener('click', (e) => {
             const clicked = e.target;
             const value = clicked.getAttribute('data-value');
+
+            if (!switcher.querySelector(`input[value="${value}"]`)) {
+              return;
+            }
 
             switcher.querySelector(`input[value="${value}"]`).checked =
               'checked';
@@ -1423,7 +1445,10 @@ window.addEventListener('DOMContentLoaded', () => {
               if (result.status === 'success') {
                 orderBlock.classList.add('twpx-ydw-order--success');
                 if (window.BX24) {
-                  BX24.fitWindow();
+                  BX24.resizeWindow(
+                    window.twinpxIframeInitialSize.width,
+                    window.twinpxIframeInitialSize.height
+                  );
                 }
                 document.querySelector('#twinpxOrderNumber').innerText =
                   result.data;
@@ -1643,25 +1668,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //close map
       document.addEventListener('twpxYdwCloseMap', () => {
-        if (window.BX24) {
-          BX24.resizeWindow(
-            window.twinpxIframeContentSize.scrollWidth,
-            window.twinpxIframeContentSize.scrollHeight
-          );
-          // setTimeout(() => {
-          //   console.log(
-          //     document
-          //       .getElementById('twinpxYadeliveryWhere')
-          //       .getBoundingClientRect().top
-          //   );
-          //   BX24.scrollParentWindow(
-          //     document
-          //       .getElementById('twinpxYadeliveryWhere')
-          //       .getBoundingClientRect().top,
-          //     () => {}
-          //   );
-          // }, 1000);
-        }
+        console.log(window.parent.document);
+        // if (window.BX24) {
+        //   // BX24.resizeWindow(
+        //   //   window.twinpxIframeContentSize.scrollWidth,
+        //   //   window.twinpxIframeContentSize.scrollHeight
+        //   // );
+        //   // setTimeout(() => {
+        //   //   BX24.scrollParentWindow(
+        //   //     document
+        //   //       .getElementById('twinpxYadeliveryWhere')
+        //   //       .getBoundingClientRect().top,
+        //   //     () => {}
+        //   //   );
+        //   // }, 1000);
+        // }
 
         orderBlock.classList.remove('twpx-ydw-order--map');
 
