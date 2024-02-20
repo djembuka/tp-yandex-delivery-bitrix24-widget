@@ -1,4 +1,10 @@
-#ydPopup textarea,
+#ydPopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+textarea,
 #twpx-showpvz {
   display: block;
   position: relative;

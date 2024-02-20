@@ -1,22 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const options = {
-      threshold: 0,
-    },
-    observer = new IntersectionObserver(callback, options),
-    target = document.querySelector('.twpx-ydw-order-error');
-
-  if (target) {
-    observer.observe(target);
-  }
-
-  function callback(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        console.log(entry);
-      }
-    });
-  }
-
   document.querySelectorAll('.twpx-ydw-order').forEach((orderBlock) => {
     const orderForm = orderBlock.querySelector('#twinpxYadeliveryOrderForm');
     const boxesBlock = orderBlock.querySelector('#twinpxYadeliveryBoxes');
@@ -34,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorBlock = document.querySelector('.twpx-ydw-order-error--fixed');
     let twpxYdwTerminalPayment = [];
     let isFormValid = true;
+    let listButtonYCoords = 0;
     const storage = {
       boxes: {
         id: null,
@@ -655,6 +638,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (listButton) {
           listButton.addEventListener('click', (e) => {
             e.preventDefault();
+            listButtonYCoords = e.pageY;
 
             const input = listButton
               .closest('.twpx-ydw-order-form-control')
@@ -1491,12 +1475,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //init location
       document.addEventListener('twpxYdwInitLocation', () => {
-        if (window.BX24) {
-          BX24.resizeWindow(
-            window.twinpxIframeInitialSize.width,
-            window.twinpxIframeInitialSize.height
-          );
-        }
+        // if (window.BX24) {
+        //   BX24.resizeWindow(
+        //     window.twinpxIframeInitialSize.width,
+        //     window.twinpxIframeInitialSize.height
+        //   );
+        // }
 
         document
           .querySelector('body')
@@ -1527,9 +1511,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 },
               },
               () => {
-                document
-                  .querySelector('#location-widget')
-                  .classList.remove('location-widget--loader');
+                const widgetElem = document.querySelector('#location-widget');
+                const locationElem =
+                  widgetElem.querySelector('.twpx-ydw-location');
+
+                widgetElem.classList.remove('location-widget--loader');
+
+                //position
+                locationElem.style = `top:${
+                  listButtonYCoords - locationElem.clientHeight / 2
+                }px; left:calc(50% - ${locationElem.clientWidth / 2}px)`;
               }
             );
           }
@@ -1554,12 +1545,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //close location
       document.addEventListener('twpxYdwCloseLocation', () => {
-        if (window.BX24) {
-          BX24.resizeWindow(
-            window.twinpxIframeContentSize.scrollWidth,
-            window.twinpxIframeContentSize.scrollHeight
-          );
-        }
+        // if (window.BX24) {
+        //   BX24.resizeWindow(
+        //     window.twinpxIframeContentSize.scrollWidth,
+        //     window.twinpxIframeContentSize.scrollHeight
+        //   );
+        // }
 
         orderBlock.classList.remove('twpx-ydw-order--location');
 
@@ -1570,12 +1561,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //init map
       document.addEventListener('twpxYdwInitMap', ({ detail }) => {
-        if (window.BX24) {
-          BX24.resizeWindow(
-            window.twinpxIframeInitialSize.width,
-            window.twinpxIframeInitialSize.height
-          );
-        }
+        // if (window.BX24) {
+        //   BX24.resizeWindow(
+        //     window.twinpxIframeInitialSize.width,
+        //     window.twinpxIframeInitialSize.height
+        //   );
+        // }
 
         document
           .querySelector('body')
@@ -1610,6 +1601,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 document
                   .querySelector('#yadelivery-widget')
                   .classList.remove('yadelivery-widget--loader');
+
+                const widgetElem = document.querySelector('#ydPopup');
+
+                widgetElem.classList.remove('location-widget--loader');
+
+                //position
+                widgetElem.style = `top:${
+                  listButtonYCoords - widgetElem.clientHeight / 2
+                }px;`;
               }
             );
           }
@@ -1668,20 +1668,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //close map
       document.addEventListener('twpxYdwCloseMap', () => {
-        console.log(window.parent.document);
         // if (window.BX24) {
-        //   // BX24.resizeWindow(
-        //   //   window.twinpxIframeContentSize.scrollWidth,
-        //   //   window.twinpxIframeContentSize.scrollHeight
-        //   // );
-        //   // setTimeout(() => {
-        //   //   BX24.scrollParentWindow(
-        //   //     document
-        //   //       .getElementById('twinpxYadeliveryWhere')
-        //   //       .getBoundingClientRect().top,
-        //   //     () => {}
-        //   //   );
-        //   // }, 1000);
+        //   BX24.resizeWindow(
+        //     window.twinpxIframeContentSize.scrollWidth,
+        //     window.twinpxIframeContentSize.scrollHeight
+        //   );
         // }
 
         orderBlock.classList.remove('twpx-ydw-order--map');
