@@ -1604,12 +1604,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 const widgetElem = document.querySelector('#ydPopup');
 
-                widgetElem.classList.remove('location-widget--loader');
+                const height = window.screen.height - 100;
 
                 //position
                 widgetElem.style = `top:${
-                  listButtonYCoords - widgetElem.clientHeight / 2
-                }px;`;
+                  listButtonYCoords - height / 2
+                }px; height: ${height}px`;
+
+                widgetElem
+                  .querySelectorAll(
+                    `
+                  #ydPopupMap,
+                  #ydPopup .yd-popup-error-message,
+                  .yd-popup-container.yd-popup--error .yd-popup-map,
+                  .yd-popup-list
+                `
+                  )
+                  .forEach((elem) => {
+                    elem.style = `height: ${height}px`;
+                  });
+
+                widgetElem.querySelector(
+                  `.yd-popup-list-detail-wrapper`
+                ).style = `height: calc(${height}px - 40px - 60px)`;
               }
             );
           }
