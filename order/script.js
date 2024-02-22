@@ -1512,15 +1512,8 @@ window.addEventListener('DOMContentLoaded', () => {
               },
               () => {
                 const widgetElem = document.querySelector('#location-widget');
-                const locationElem =
-                  widgetElem.querySelector('.twpx-ydw-location');
 
                 widgetElem.classList.remove('location-widget--loader');
-
-                //position
-                locationElem.style = `top:${
-                  listButtonYCoords - locationElem.clientHeight / 2
-                }px; left:calc(50% - ${locationElem.clientWidth / 2}px)`;
               }
             );
           }
@@ -1601,32 +1594,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 document
                   .querySelector('#yadelivery-widget')
                   .classList.remove('yadelivery-widget--loader');
-
-                const widgetElem = document.querySelector('#ydPopup');
-
-                const height = window.screen.height - 100;
-
-                //position
-                widgetElem.style = `top:${
-                  listButtonYCoords - height / 2
-                }px; height: ${height}px`;
-
-                widgetElem
-                  .querySelectorAll(
-                    `
-                  #ydPopupMap,
-                  #ydPopup .yd-popup-error-message,
-                  .yd-popup-container.yd-popup--error .yd-popup-map,
-                  .yd-popup-list
-                `
-                  )
-                  .forEach((elem) => {
-                    elem.style = `height: ${height}px`;
-                  });
-
-                widgetElem.querySelector(
-                  `.yd-popup-list-detail-wrapper`
-                ).style = `height: calc(${height}px - 40px - 60px)`;
               }
             );
           }
