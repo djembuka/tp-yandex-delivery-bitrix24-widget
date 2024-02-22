@@ -149,7 +149,6 @@ body.twpx-ydw-order--no-scroll {
 .twpx-ydw-order-btn-remove svg {
   pointer-events: none;
 }
-.twpx-ydw-order-btn-list,
 .twpx-ydw-order-btn-calc {
   position: absolute;
   top: 8px;
@@ -162,6 +161,34 @@ body.twpx-ydw-order--no-scroll {
   cursor: pointer;
   border-radius: 7px;
   z-index: 10;
+}
+.twpx-ydw-order-btn-list {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: none;
+  z-index: 10;
+}
+.twpx-ydw-order-btn-list + .twpx-ydw-order-label + .twpx-ydw-order-input {
+  padding-left: 54px;
+  background-color: #fff;
+}
+.twpx-ydw-order-btn-list + .twpx-ydw-order-label {
+  left: 54px;
+}
+.twpx-ydw-order-form-control--map .twpx-ydw-order-input {
+  cursor: pointer;
+}
+.twpx-ydw-order-form-control-text {
+  display: none;
+  font-size: 12px;
+  margin-top: 9px;
 }
 
 .twpx-ydw-order-btn-calc.twpx-ydw-order-btn--loading svg {
@@ -195,26 +222,6 @@ body.twpx-ydw-order--no-scroll {
   }
 }
 
-.twpx-ydw-order-btn-list {
-  right: auto;
-  left: 8px;
-  pointer-events: none;
-}
-.twpx-ydw-order-btn-list + .twpx-ydw-order-label + .twpx-ydw-order-input {
-  padding-left: 56px;
-  background-color: #fff;
-}
-.twpx-ydw-order-btn-list + .twpx-ydw-order-label {
-  left: 56px;
-}
-.twpx-ydw-order-form-control-text {
-  display: none;
-  font-size: 12px;
-  margin-top: 9px;
-}
-.twpx-ydw-order-form-control--map .twpx-ydw-order-input {
-  cursor: pointer;
-}
 .twpx-ydw-order-form-block-content:nth-child(2) .twpx-ydw-order-btn-remove {
   display: none;
 }

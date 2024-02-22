@@ -1,22 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const options = {
-      threshold: 0,
-    },
-    observer = new IntersectionObserver(callback, options),
-    target = document.querySelector('.twpx-ydw-order-error');
-
-  if (target) {
-    observer.observe(target);
-  }
-
-  function callback(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        console.log(entry);
-      }
-    });
-  }
-
   document.querySelectorAll('.twpx-ydw-order').forEach((orderBlock) => {
     const orderForm = orderBlock.querySelector('#twinpxYadeliveryOrderForm');
     const boxesBlock = orderBlock.querySelector('#twinpxYadeliveryBoxes');
@@ -1668,21 +1650,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //close map
       document.addEventListener('twpxYdwCloseMap', () => {
-        console.log(window.parent.document);
-        // if (window.BX24) {
-        //   // BX24.resizeWindow(
-        //   //   window.twinpxIframeContentSize.scrollWidth,
-        //   //   window.twinpxIframeContentSize.scrollHeight
-        //   // );
-        //   // setTimeout(() => {
-        //   //   BX24.scrollParentWindow(
-        //   //     document
-        //   //       .getElementById('twinpxYadeliveryWhere')
-        //   //       .getBoundingClientRect().top,
-        //   //     () => {}
-        //   //   );
-        //   // }, 1000);
-        // }
+        if (window.BX24) {
+          BX24.resizeWindow(
+            window.twinpxIframeContentSize.scrollWidth,
+            window.twinpxIframeContentSize.scrollHeight
+          );
+          // setTimeout(() => {
+          //   BX24.scrollParentWindow(
+          //     document
+          //       .getElementById('twinpxYadeliveryWhere')
+          //       .getBoundingClientRect().top,
+          //     () => {}
+          //   );
+          // }, 1000);
+        }
 
         orderBlock.classList.remove('twpx-ydw-order--map');
 

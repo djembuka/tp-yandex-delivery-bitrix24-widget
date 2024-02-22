@@ -183,6 +183,9 @@ window.addEventListener('DOMContentLoaded', () => {
               '.twpx-ydw-settings-input'
             );
             const newHidden = newBlock.querySelector('input[type="hidden"]');
+            const newText = newBlock.querySelector(
+              '.twpx-ydw-settings-form-control-text'
+            );
 
             newBlock.classList.remove('twpx-ydw-settings-form-control--active');
             newBlock.classList.remove(
@@ -193,6 +196,10 @@ window.addEventListener('DOMContentLoaded', () => {
               : (newControl.textContent = '');
             if (newHidden) {
               newHidden.value = '';
+            }
+            if (newText) {
+              newText.textContent = '';
+              newText.style.display = 'none';
             }
 
             addButton.before(newBlock);
@@ -345,9 +352,11 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       //list
-      const listButton = block.querySelector('.twpx-ydw-settings-btn-list');
+      const listButton = block.querySelector(
+        '.twpx-ydw-settings-form-control--storage .twpx-ydw-settings-input'
+      );
 
-      if (listButton) {
+      if (block.querySelector('.twpx-ydw-settings-btn-list')) {
         listButton.addEventListener('click', (e) => {
           e.preventDefault();
 
@@ -396,7 +405,6 @@ window.addEventListener('DOMContentLoaded', () => {
       if (clearButton) {
         clearButton.addEventListener('click', (e) => {
           e.preventDefault();
-          console.log('fff');
 
           if (control.value) {
             control.value = '';
@@ -409,6 +417,14 @@ window.addEventListener('DOMContentLoaded', () => {
           );
           if (hidden) {
             hidden.value = '';
+          }
+
+          const textDiv = control.parentNode.querySelector(
+            '.twpx-ydw-settings-form-control-text'
+          );
+          if (textDiv) {
+            textDiv.style.display = 'none';
+            textDiv.textContent = '';
           }
 
           const div = control.parentNode.querySelector(
@@ -656,8 +672,18 @@ window.addEventListener('DOMContentLoaded', () => {
         const activeHiddenInput = activeInput.parentNode.querySelector(
           'input[type="hidden"]'
         );
-        setInputValue(activeInput, `${e.detail.title} (${e.detail.address})`);
+        const value = `${e.detail.title} (${e.detail.address})`;
+        setInputValue(activeInput, value);
         activeHiddenInput.value = JSON.stringify(e.detail);
+
+        //text
+        const textDiv = activeInput.parentNode.querySelector(
+          '.twpx-ydw-settings-form-control-text'
+        );
+        if (textDiv) {
+          textDiv.style.display = 'block';
+          textDiv.textContent = value;
+        }
 
         autosave(terminalFormBlock.closest('form'));
 

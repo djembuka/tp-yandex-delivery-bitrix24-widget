@@ -133,16 +133,35 @@ body.twpx-ydw-settings--no-scroll {
 }
 .twpx-ydw-settings-btn-list {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 32px;
-  height: 32px;
+  top: 12px;
+  left: 15px;
+  width: 24px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  pointer-events: none;
   z-index: 10;
 }
+.twpx-ydw-settings-btn-list
+  + .twpx-ydw-settings-label
+  + .twpx-ydw-settings-input {
+  padding-left: 54px;
+  background-color: #fff;
+}
+.twpx-ydw-settings-btn-list + .twpx-ydw-settings-label {
+  left: 54px;
+}
+.twpx-ydw-settings-form-control--storage .twpx-ydw-settings-input {
+  cursor: pointer;
+}
+.twpx-ydw-settings-form-control-text {
+  display: none;
+  font-size: 12px;
+  margin-top: 9px;
+}
+
 .twpx-ydw-settings-form-control .twpx-ydw-settings-btn-remove {
   display: none;
 }
@@ -155,16 +174,13 @@ body.twpx-ydw-settings--no-scroll {
   width: 16px;
   height: 16px;
   position: absolute;
-  top: calc(50% - 8px);
+  top: 15px;
   right: 16px;
   cursor: pointer;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   opacity: 0;
   z-index: 10;
-}
-.twpx-ydw-settings-btn-clear:hover {
-  opacity: 0.7;
 }
 .twpx-ydw-settings-btn-clear:before {
   content: '';
@@ -191,8 +207,13 @@ body.twpx-ydw-settings--no-scroll {
 .twpx-ydw-settings-form-group--multiple .twpx-ydw-settings-btn-clear {
   display: none;
 }
-.twpx-ydw-settings-form-control:hover .twpx-ydw-settings-btn-clear {
+.twpx-ydw-settings-form-control.twpx-ydw-settings-form-control--active:hover
+  .twpx-ydw-settings-btn-clear {
   opacity: 1;
+}
+.twpx-ydw-settings-form-control.twpx-ydw-settings-form-control--active
+  .twpx-ydw-settings-btn-clear:hover {
+  opacity: 0.7;
 }
 /*Input*/
 .twpx-ydw-settings-form-control {
