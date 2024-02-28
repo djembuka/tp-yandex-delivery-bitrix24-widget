@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorBlock = document.querySelector('.twpx-ydw-order-error--fixed');
     let twpxYdwTerminalPayment = [];
     let isFormValid = true;
-    let listButtonYCoords = 0;
     const storage = {
       boxes: {
         id: null,
@@ -638,7 +637,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (listButton) {
           listButton.addEventListener('click', (e) => {
             e.preventDefault();
-            listButtonYCoords = e.pageY;
 
             const input = listButton
               .closest('.twpx-ydw-order-form-control')
@@ -1475,12 +1473,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //init location
       document.addEventListener('twpxYdwInitLocation', () => {
-        // if (window.BX24) {
-        //   BX24.resizeWindow(
-        //     window.twinpxIframeInitialSize.width,
-        //     window.twinpxIframeInitialSize.height
-        //   );
-        // }
+        if (window.BX24) {
+          BX24.resizeWindow(
+            window.twinpxIframeInitialSize.width,
+            window.twinpxIframeInitialSize.height
+          );
+        }
 
         document
           .querySelector('body')
@@ -1511,9 +1509,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 },
               },
               () => {
-                const widgetElem = document.querySelector('#location-widget');
-
-                widgetElem.classList.remove('location-widget--loader');
+                document
+                  .querySelector('#location-widget')
+                  .classList.remove('location-widget--loader');
               }
             );
           }
@@ -1538,12 +1536,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //close location
       document.addEventListener('twpxYdwCloseLocation', () => {
-        // if (window.BX24) {
-        //   BX24.resizeWindow(
-        //     window.twinpxIframeContentSize.scrollWidth,
-        //     window.twinpxIframeContentSize.scrollHeight
-        //   );
-        // }
+        if (window.BX24) {
+          BX24.resizeWindow(
+            window.twinpxIframeContentSize.scrollWidth,
+            window.twinpxIframeContentSize.scrollHeight
+          );
+        }
 
         orderBlock.classList.remove('twpx-ydw-order--location');
 
@@ -1554,12 +1552,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       //init map
       document.addEventListener('twpxYdwInitMap', ({ detail }) => {
-        // if (window.BX24) {
-        //   BX24.resizeWindow(
-        //     window.twinpxIframeInitialSize.width,
-        //     window.twinpxIframeInitialSize.height
-        //   );
-        // }
+        if (window.BX24) {
+          BX24.resizeWindow(
+            window.twinpxIframeInitialSize.width,
+            window.twinpxIframeInitialSize.height
+          );
+        }
 
         document
           .querySelector('body')

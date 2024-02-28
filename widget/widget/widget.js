@@ -1,29 +1,31 @@
 window.twpxYadeliveryWidget = {
-  createWidget(options, callback) {
-    (async function () {
-      //script
-      let responseJS = await fetch(window.twinpxYadeliveryFetchWidget.js);
-      let js = await responseJS.text();
+    createWidget(options, callback) {
+        (async function () {
+            //script
+            let responseJS = await fetch(window.twinpxYadeliveryFetchWidget.js);
+            let js = await responseJS.text();
 
-      const script = document.createElement('script');
-      script.textContent = js;
+            const script = document.createElement("script");
+            script.textContent = js;
 
-      document.querySelector('body').append(script);
+            document.querySelector("body").append(script);
 
-      window.twpxYadeliveryWidget.JS(options);
+            window.twpxYadeliveryWidget.JS(options);
 
-      //stye
-      let responseCSS = await fetch(window.twinpxYadeliveryFetchWidget.css);
-      let css = await responseCSS.text();
+            //stye
+            let responseCSS = await fetch(
+                window.twinpxYadeliveryFetchWidget.css
+            );
+            let css = await responseCSS.text();
 
-      const style = document.createElement('style');
-      style.textContent = css;
+            const style = document.createElement("style");
+            style.textContent = css;
 
-      document.querySelector('head').append(style);
+            document.querySelector("head").append(style);
 
-      callback();
-    })();
-  },
+            callback();
+        })();
+    },
 };
 
-document.dispatchEvent(new Event('twpxYadeliveryWidgetLoad'));
+document.dispatchEvent(new Event("twpxYadeliveryWidgetLoad"));

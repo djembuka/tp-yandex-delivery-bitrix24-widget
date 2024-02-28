@@ -732,13 +732,11 @@ window.twpxYadeliveryWidget.JS = (options) => {
               elemLoader(ydPopupWrapper, true);
 
               try {
-                response = await fetch(
-                  window.twinpxYadeliveryFetchPointsURL /*, {
+                response = await fetch(window.twinpxYadeliveryFetchPointsURL, {
                   method: 'POST',
                   body: formData,
                   signal: controller.signal,
-                }*/
-                );
+                });
                 let result = await response.json();
 
                 //remove preloader
