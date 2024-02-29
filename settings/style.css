@@ -125,7 +125,12 @@ body.twpx-ydw-settings--no-scroll {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   z-index: 10;
+}
+.twpx-ydw-settings-btn-remove:hover {
+  opacity: 0.7;
 }
 .twpx-ydw-settings-btn-remove svg {
   width: 24px;

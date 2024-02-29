@@ -144,7 +144,12 @@ body.twpx-ydw-order--no-scroll {
   width: 32px;
   height: 32px;
   cursor: pointer;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   z-index: 10;
+}
+.twpx-ydw-order-btn-remove:hover {
+  opacity: 0.7;
 }
 .twpx-ydw-order-btn-remove svg {
   pointer-events: none;
