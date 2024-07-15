@@ -1168,13 +1168,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 dateSelect
                   .closest('.twpx-ydw-order-form-control')
                   .classList.remove('twpx-ydw-order-form-control--load');
-              } else if (result.errors) {
+              } else {
                 //remove load
                 dateSelect
                   .closest('.twpx-ydw-order-form-control')
                   .classList.remove('twpx-ydw-order-form-control--load');
-
-                showError(result.errors[0].message, periodBlock);
+                if (result.errors) {
+                  showError(result.errors[0].message, periodBlock);
+                } else {
+                  showError('System error', periodBlock);
+                }
               }
             }
           } catch (err) {
