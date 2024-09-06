@@ -570,7 +570,8 @@ body.twpx-ydw-order--no-scroll {
   cursor: pointer;
   z-index: 15;
 }
-.twpx-ydw-order-button {
+.twpx-ydw-order-button,
+.twpx-ydw-reload-button {
   border-radius: 7px;
   background-color: #fc3f1d;
   color: #fff;
@@ -588,10 +589,12 @@ body.twpx-ydw-order--no-scroll {
   transition: opacity 0.3s ease;
   user-select: none;
 }
-.twpx-ydw-order-button:hover {
+.twpx-ydw-order-button:hover,
+.twpx-ydw-reload-button:hover {
   opacity: 0.7;
 }
-.twpx-ydw-order-button:disabled {
+.twpx-ydw-order-button:disabled,
+.twpx-ydw-reload-button:disabled {
   background-color: #ededed;
   color: #a7abb1;
   cursor: default;

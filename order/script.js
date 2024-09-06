@@ -1,12 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.twpx-ydw-order').forEach((orderBlock) => {
+    const reloadButton = orderBlock.querySelector(
+      '#twinpxYadeliveryReloadButton'
+    );
     const orderForm = orderBlock.querySelector('#twinpxYadeliveryOrderForm');
     const boxesBlock = orderBlock.querySelector('#twinpxYadeliveryBoxes');
     const productsBlock = orderBlock.querySelector('#twinpxYadeliveryProducts');
     const periodBlock = orderBlock.querySelector('#twinpxYadeliveryPeriod');
     const periodButton = periodBlock
-      .querySelector('#twinpxYadeliveryPeriodButton')
-      .cloneNode();
+      ? periodBlock.querySelector('#twinpxYadeliveryPeriodButton').cloneNode()
+      : undefined;
     const orderButtonBlock = orderBlock.querySelector(
       '.twpx-ydw-order-button-block'
     );
@@ -29,6 +32,18 @@ window.addEventListener('DOMContentLoaded', () => {
         value: {},
       },
     };
+
+    if (reloadButton) {
+      reloadButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(window.BX24);
+        if (window.BX24) {
+          console.log(1);
+          BX24.reloadWindow();
+        }
+      });
+      return;
+    }
 
     //storage
     if (window.BX24) {
