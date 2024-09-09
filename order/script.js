@@ -36,11 +36,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (reloadButton) {
       reloadButton.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log(window.BX24);
-        if (window.BX24) {
-          console.log(1);
-          BX24.reloadWindow();
-        }
+        document.location.reload();
+        // if (window.BX24) {
+        //   BX24.reloadWindow();
+        // }
       });
       return;
     }
