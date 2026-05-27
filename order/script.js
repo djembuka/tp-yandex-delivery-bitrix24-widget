@@ -1,4 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const TWINPX_JS_NO_YMAP_KEY =
+      'Администратор не указал ключ Яндекс Карт в Настройках системы. Дальнейшая работа модуля Яндекс Доставка невозможна.';
+
   document.querySelectorAll('.twpx-ydw-order').forEach((orderBlock) => {
     const reloadButton = orderBlock.querySelector(
       '#twinpxYadeliveryReloadButton'
@@ -1595,22 +1598,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
         (function (w) {
           function startWidget() {
-            w.twpxYadeliveryWidget.createWidget(
-              {
-                containerId: 'yadelivery-widget',
-                params: {
-                  error,
-                  panTo,
-                  city,
-                  id,
+            try {
+              w.twpxYadeliveryWidget.createWidget(
+                {
+                  containerId: 'yadelivery-widget',
+                  params: {
+                    error,
+                    panTo,
+                    city,
+                    id,
+                  },
                 },
-              },
-              () => {
-                document
-                  .querySelector('#yadelivery-widget')
-                  .classList.remove('yadelivery-widget--loader');
-              }
-            );
+                () => {
+                  document
+                    .querySelector('#yadelivery-widget')
+                    .classList.remove('yadelivery-widget--loader');
+                }
+              );
+            }
+            catch(e) {
+              document
+                .querySelector('#yadelivery-widget')
+                .classList.remove('yadelivery-widget--loader');
+                
+              orderBlock.classList.remove('twpx-ydw-order--map');
+
+              showError(
+                TWINPX_JS_NO_YMAP_KEY,
+                document.getElementById('twinpxYadeliveryWhere')
+              );
+
+              throw Error(e);
+            }
           }
           w.twpxYadeliveryWidget
             ? setTimeout(startWidget, 500)
