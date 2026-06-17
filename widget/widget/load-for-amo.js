@@ -391,7 +391,6 @@ window.twpxYadeliveryWidget.JS = (options) => {
 
         myGeocoder
         .then((res) => {
-          pvzPopup.adjustPosition();
           if (!res.ok) throw Error('Bad geocode response');
 
           return res.json();
